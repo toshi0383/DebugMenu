@@ -23,4 +23,12 @@ public struct DebugMenu {
     public static func removeDashboardItem(_ item: DashboardItem) {
         InAppDebuggerWindow.removeDashboardItem(item)
     }
+
+    public static func showDashboardWidget() {
+        InAppDebuggerWindow.showDashboardWidget()
+    }
+
+    public static func hideDashboardWidget() {
+        InAppDebuggerWindow.hideDashboardWidget()
+    }
 }

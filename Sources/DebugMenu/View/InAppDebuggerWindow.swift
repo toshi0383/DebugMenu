@@ -79,4 +79,16 @@ public class InAppDebuggerWindow: UIWindow {
 
         vc.widgetView.appendItem(item)
     }
+
+    internal static func showDashboardWidget() {
+        guard let vc = shared.rootViewController as? FloatingViewController else { return }
+
+        vc.widgetView.show()
+    }
+
+    internal static func hideDashboardWidget() {
+        guard let vc = shared.rootViewController as? FloatingViewController else { return }
+
+        vc.widgetView.hide()
+    }
 }
