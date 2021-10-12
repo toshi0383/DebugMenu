@@ -15,4 +15,12 @@ public struct DebugMenu {
             options: options
         )
     }
+
+    public static func appendDashboardItem(_ item: DashboardItem) {
+        InAppDebuggerWindow.appendDashboardItem(item)
+    }
+
+    public static func removeDashboardItem(_ item: DashboardItem) {
+        InAppDebuggerWindow.removeDashboardItem(item)
+    }
 }

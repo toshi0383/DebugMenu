@@ -11,7 +11,7 @@ import UIKit
 internal class FloatingViewController: UIViewController {
     class View: UIView, TouchThrowing {}
     private let launchView: LaunchView
-    private let widgetView: WidgetView
+    let widgetView: WidgetView
     private let debuggerItems: [DebugItem]
     private var cancellables: Set<AnyCancellable> = []
     private let options: [Options]

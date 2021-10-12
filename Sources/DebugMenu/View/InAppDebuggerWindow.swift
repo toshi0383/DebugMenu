@@ -67,4 +67,16 @@ public class InAppDebuggerWindow: UIWindow {
             return view
         }
     }
+
+    internal static func appendDashboardItem(_ item: DashboardItem) {
+        guard let vc = shared.rootViewController as? FloatingViewController else { return }
+
+        vc.widgetView.appendItem(item)
+    }
+
+    internal static func removeDashboardItem(_ item: DashboardItem) {
+        guard let vc = shared.rootViewController as? FloatingViewController else { return }
+
+        vc.widgetView.appendItem(item)
+    }
 }

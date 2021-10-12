@@ -11,7 +11,7 @@ import UIKit
 class WidgetView: UIVisualEffectView {
     private let tableView: UITableView = .init(frame: .null, style: .plain)
     private var cancellables: Set<AnyCancellable> = []
-    private let dashboardItems: [DashboardItem]
+    private var dashboardItems: [DashboardItem]
 
     init(dashboardItems: [DashboardItem]) {
         self.dashboardItems = dashboardItems
@@ -60,6 +60,20 @@ class WidgetView: UIVisualEffectView {
         isHidden = true
         dashboardItems.forEach({ $0.stopMonitoring() })
         cancellables = []
+    }
+
+    func appendItem(_ item: DashboardItem) {
+        if !dashboardItems.contains(where: { $0.title == item.title }) {
+            dashboardItems.append(item)
+            reloadData()
+        }
+    }
+
+    func removeItem(_ item: DashboardItem) {
+        if let i = dashboardItems.firstIndex(where: { $0.title == item.title }) {
+            dashboardItems.remove(at: i)
+            reloadData()
+        }
     }
 
     private func reloadData() {
